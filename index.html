@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">BillManage</div>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showSection('home')">Home</a></li>
+                    <li><a href="#" onclick="showSection('addBill')">Add Bill</a></li>
+                    <li><a href="#" onclick="showSection('viewBills')">View Bills</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Home Section -->
+            <section id="home" class="section active">
+                <h1>Welcome to Bill Management System</h1>
+                <p>Track and manage your bills efficiently.</p>
+                <div class="chart-container">
+                    <canvas id="billChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="paymentChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Add Bill Section -->
+            <section id="addBill" class="section">
+                <h2>Add New Bill</h2>
+                <form id="billForm">
+                    <div class="form-group">
+                        <label for="itemName">Item Name:</label>
+                        <input type="text" id="itemName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemQuantity">Item Quantity:</label>
+                        <input type="number" id="itemQuantity" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemPrice">Item Price:</label>
+                        <input type="number" id="itemPrice" required>
+                    </div>
+                    <button type="submit">Add Item</button>
+                </form>
+                <div id="itemList">
+                    <h3>Items Added</h3>
+                    <ul id="itemsContainer">
+                        <!-- List of items will be dynamically added here -->
+                    </ul>
+                </div>
+            </section>
+
+            <!-- View Bills Section -->
+            <section id="viewBills" class="section">
+                <h2>View Bills</h2>
+                <p>View and manage your bills here.</p>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
